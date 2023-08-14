@@ -44,7 +44,7 @@ void IntList::add(int value) {
 int IntList::get(int index) {
     // Write your code under this comment
 
-    return -1; // Remove and return your result
+    return -1; // Remove this line and return your result
 }
 
 /*
@@ -61,7 +61,7 @@ int IntList::get(int index) {
 std::string toString() {
     // Write your code under this comment
 
-    return "Update Your toString()!"; // Remove and return your result
+    return "Update Your toString()!"; // Remove this line and return your result
 }
 
 /*
@@ -132,7 +132,7 @@ void IntList::clear() {
 int IntList::size() {
     // Write your code under this comment
 
-    return -1; // Remove and return your result
+    return -1; // Remove this line and return your result
 }
 
 /*
@@ -146,4 +146,5 @@ int IntList::size() {
  */
 void IntList::resize() {
     // Write your code under this comment
+    
 }

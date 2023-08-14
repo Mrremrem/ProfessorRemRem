@@ -5,11 +5,13 @@
 void initIntListTester();
 void addTests(int testNum[]);
 void getTests(int testNum[]);
+void removeTests(int testNum[]);
 
 // Prints test results, don't worry about templates yet ;P
 template<typename TGenericObject>
-void printResults(TGenericObject expected, 
-                    TGenericObject actual, std::string description, int testNum);
+void printResults(TGenericObject expected, TGenericObject actual, 
+                   std::string description, int testNum);
+
 
 // Tester function, run main() and see your results!
 int main() {
@@ -24,6 +26,8 @@ void initIntListTester() {
     int testNum[SINGLE_TEST_NUM];
 
     addTests(testNum);
+    getTests(testNum);
+    removeTests(testNum);
 }
 
 // Runs tests for IntList.add()
@@ -39,7 +43,7 @@ void addTests(int testNum[]) {
     std::string description = "add() Test: Adds [10, 20, 30] to list";
     printResults(expected, actual, description, ++testNum[0]);
 
-    // ------------------------ //
+    // --------------
 
     list = IntList(); // Reinitializes to empty list
 
@@ -59,7 +63,7 @@ void addTests(int testNum[]) {
     description = "add() Test: Adds -5 ten times to list";
     printResults(expected, actual, description, ++testNum[0]);
 
-    // ------------------------ //
+    // --------------
 
     list = IntList();
 
@@ -105,6 +109,36 @@ void getTests(int testNum[]) {
     actual = list.get(4);
     description = "get() Test: Getting last value from [10, 20, 30, 40, 50] (50)";
     printResults(expected, actual, description, ++testNum[0]);
+}
+
+// Runs tests for IntList.remove()
+void removeTests(int testNum[]) {
+    IntList list;
+    list.add(10);
+    list.add(20);
+    list.add(30);
+    list.add(40);
+    list.add(50);
+
+    list.remove();
+
+    std::string expected = "[10, 20, 30, 40]";
+    std::string actual = list.toString();
+    std::string description = "remove() Test: Removing from end of list";
+    printResults(expected, actual, description, ++testNum[0]);
+
+    // --------------
+
+    list = IntList();
+
+    list.add(10);
+    list.remove();
+
+    expected = "[]";
+    actual = list.toString();
+    description = "remove() Test: Removing list until list is empty";
+    printResults(expected, actual, description, ++testNum[0]);
+    
 }
 
 // Prints test results
