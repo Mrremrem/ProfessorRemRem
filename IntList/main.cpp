@@ -4,15 +4,16 @@
 
 void initIntListTester();
 void addTests(int testNum[]);
+void getTests(int testNum[]);
 
 // Prints test results, don't worry about templates yet ;P
 template<typename TGenericObject>
 void printResults(TGenericObject expected, 
                     TGenericObject actual, std::string description, int testNum);
 
-// Tester function, 
+// Tester function, run main() and see your results!
 int main() {
-    // Uncomment and run your own tests once you've passed all tests
+    // Uncomment and run your own tests once you've passed
     initIntListTester();
 }
 
@@ -35,7 +36,7 @@ void addTests(int testNum[]) {
 
     std::string expected = "[10, 20, 30]";
     std::string actual = list.toString();
-    std::string description = "Adds [10, 20, 30] to list";
+    std::string description = "add() Test: Adds [10, 20, 30] to list";
     printResults(expected, actual, description, ++testNum[0]);
 
     // ------------------------ //
@@ -55,7 +56,7 @@ void addTests(int testNum[]) {
 
     expected = "[-5, -5, -5, -5, -5, -5, -5, -5, -5, -5]";
     actual = list.toString();
-    description = "Adds -5 ten times to list";
+    description = "add() Test: Adds -5 ten times to list";
     printResults(expected, actual, description, ++testNum[0]);
 
     // ------------------------ //
@@ -72,9 +73,38 @@ void addTests(int testNum[]) {
 
     expected += "]";
     actual = list.toString();
-    description = "Adds from 0–99 to list";
+    description = "add() Test: Adds from 0–99 to list";
     printResults(expected, actual, description, ++testNum[0]);
 
+}
+
+// Runs tests for IntList.get()
+void getTests(int testNum[]) {
+    IntList list;
+    list.add(10);
+    list.add(20);
+    list.add(30);
+    list.add(40);
+    list.add(50);
+
+    int expected = 30;
+    int actual = list.get(2);
+    std::string description = "get() Test: Getting middle value from [10, 20, 30, 40, 50] (30)";
+    printResults(expected, actual, description, ++testNum[0]);
+
+    // --------------
+
+    expected = 10;
+    actual = list.get(0);
+    description = "get() Test: Getting first value from [10, 20, 30, 40, 50] (10)";
+    printResults(expected, actual, description, ++testNum[0]);
+
+    // --------------
+
+    expected = 50;
+    actual = list.get(4);
+    description = "get() Test: Getting last value from [10, 20, 30, 40, 50] (50)";
+    printResults(expected, actual, description, ++testNum[0]);
 }
 
 // Prints test results

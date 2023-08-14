@@ -36,7 +36,9 @@ void IntList::add(int value) {
  * Example: list = [10, 20, 30]
  *          std::cout(list.get(0))
  *          Output: 10
- * Precondition: 0 <= index < size()
+ * Precondition: 0 <= index < size(), 
+ *               size() > 0,
+ *               throws error otherwise
  * Postcondition: Returns value from index in this IntList
  */
 int IntList::get(int index) {
@@ -53,7 +55,8 @@ int IntList::get(int index) {
  * Your job here is to return a string that returns
  * a list of values in IntList enclosed in brackets
  * Precondition: none
- * Postcondition: Returns IntList as a string
+ * Postcondition: Returns IntList as a string,
+ *                returns [] if empty
  */
 std::string toString() {
     // Write your code under this comment
@@ -66,7 +69,8 @@ std::string toString() {
  * Example: list = [10, 20, 30]
  *          list.remove()
  *          list = [10, 20]
- * Precondition: size() > 0
+ * Precondition: size() > 0, 
+ *               throws error otherwise
  * Postcondition: size() = size() - 1
  */
 void IntList::remove() {
@@ -81,7 +85,8 @@ void IntList::remove() {
  *          list = [20, 30]
  *          list.removeAt(1)
  *          list = [20]
- * Precondition: size() > 0
+ * Precondition: size() > 0,
+ *               throws error otherwise
  * Postcondition: size() = size() - 1
  */
 void IntList::removeAt(int index) {
@@ -95,6 +100,7 @@ void IntList::removeAt(int index) {
  *          list.insert(1, 69)
  *          list = [10, 69, 20, 30]
  * Precondition: 0 <= index < size()
+ *               throws error otherwise
  * Postcondition: size() = size() + 1
  */
 void IntList::insert(int index, int value) {
@@ -116,12 +122,12 @@ void IntList::clear() {
 }
 
 /*
- * Returns size of IntList
+ * Returns # of elements in IntList
  * Example: list = [10, 20, 30]
  *          std::cout(list.size())
  *          Output: 3
  * Precondition: none
- * Postcondition: Returns # of elements in IntList
+ * Postcondition: Returns totalSize
  */
 int IntList::size() {
     // Write your code under this comment
