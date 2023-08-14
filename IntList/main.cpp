@@ -36,8 +36,45 @@ void addTests(int testNum[]) {
     std::string expected = "[10, 20, 30]";
     std::string actual = list.toString();
     std::string description = "Adds [10, 20, 30] to list";
-
     printResults(expected, actual, description, ++testNum[0]);
+
+    // ------------------------ //
+
+    list = IntList(); // Reinitializes to empty list
+
+    list.add(-5);
+    list.add(-5);
+    list.add(-5);
+    list.add(-5);
+    list.add(-5);
+    list.add(-5);
+    list.add(-5);
+    list.add(-5);
+    list.add(-5);
+    list.add(-5);
+
+    expected = "[-5, -5, -5, -5, -5, -5, -5, -5, -5, -5]";
+    actual = list.toString();
+    description = "Adds -5 ten times to list";
+    printResults(expected, actual, description, ++testNum[0]);
+
+    // ------------------------ //
+
+    list = IntList();
+
+    const int MAX_ADD = 100;
+    expected = "[0"; // WARNING: Not real expected. Gets altered in for loop!!!
+    for (int addIndex = 0; addIndex < MAX_ADD; addIndex++) {
+        list.add(addIndex);
+        expected += ", ";
+        expected += addIndex;
+    }
+
+    expected += "]";
+    actual = list.toString();
+    description = "Adds from 0–99 to list";
+    printResults(expected, actual, description, ++testNum[0]);
+
 }
 
 // Prints test results

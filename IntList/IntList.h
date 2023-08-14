@@ -73,6 +73,7 @@ private:
      * class constant. Leave INITIAL_CAPACITY unchanged.
     */ 
     static const int INITIAL_CAPACITY = 10;  // Initial capacity of the array
+    static const int RESIZE_MULTIPLYER = 2; // Multiplyer for capacity resize
     int container[INITIAL_CAPACITY]; // Array where the data (your ints) will be stored
     int capacity; // Max # of elements that container[] can hold before it needs to be resized
 

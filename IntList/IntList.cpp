@@ -28,6 +28,7 @@ IntList::~IntList() {
  */
 void IntList::add(int value) {
     // Write your code under this comment
+
 }
 
 /*
@@ -40,6 +41,8 @@ void IntList::add(int value) {
  */
 int IntList::get(int index) {
     // Write your code under this comment
+
+    return -1; // Remove and return your result
 }
 
 /*
@@ -54,6 +57,8 @@ int IntList::get(int index) {
  */
 std::string toString() {
     // Write your code under this comment
+
+    return "Update Your toString()!"; // Remove and return your result
 }
 
 /*
@@ -66,6 +71,7 @@ std::string toString() {
  */
 void IntList::remove() {
     // Write your code under this comment
+
 }
 
 /*
@@ -80,6 +86,7 @@ void IntList::remove() {
  */
 void IntList::removeAt(int index) {
     // Write your code under this comment
+
 }
 
 /*
@@ -92,6 +99,7 @@ void IntList::removeAt(int index) {
  */
 void IntList::insert(int index, int value) {
     // Write your code under this comment
+
 }
 
 /*
@@ -104,6 +112,7 @@ void IntList::insert(int index, int value) {
  */
 void IntList::clear() {
     // Write your code under this comment
+
 }
 
 /*
@@ -115,5 +124,20 @@ void IntList::clear() {
  * Postcondition: Returns # of elements in IntList
  */
 int IntList::size() {
+    // Write your code under this comment
+
+    return -1; // Remove and return your result
+}
+
+/*
+ * Helper function for resizing data[]
+ * Multiply capacity by RESIZE_MULTIPLYER,
+ * then copy old container[] to new container,
+ * after that, set the container[] member variable
+ * equal to the new container (to resize)
+ * Precondition: none
+ * Postcondition: capacity = RESIZE_MULTIPLYER * capacity
+ */
+void IntList::resize() {
     // Write your code under this comment
 }
