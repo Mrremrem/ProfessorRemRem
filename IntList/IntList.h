@@ -8,8 +8,8 @@
  * Also, please follow me on github.com/Mrremrem :)
  */
 
-#ifndef CODECAMP_H
-#define CODECAMP_H
+#ifndef INTLIST_H
+#define INTLIST_H
 
 #include <string> // Change to <cstring> if your compiler doesn't recognize <string>
 
@@ -88,4 +88,4 @@ private:
 };
 
 
-#endif // CODECAMP_H
+#endif // INTLIST_H

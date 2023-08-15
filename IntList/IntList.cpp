@@ -58,7 +58,7 @@ int IntList::get(int index) {
  * Postcondition: Returns IntList as a string,
  *                returns [] if empty
  */
-std::string toString() {
+std::string IntList::toString() {
     // Write your code under this comment
 
     return "Update Your toString()!"; // Remove this line and return your result

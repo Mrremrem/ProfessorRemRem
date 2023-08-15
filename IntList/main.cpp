@@ -6,6 +6,7 @@ void initIntListTester();
 void addTests(int testNum[]);
 void getTests(int testNum[]);
 void removeTests(int testNum[]);
+void removeAtTests(int testNum[]);
 
 // Prints test results, don't worry about templates yet ;P
 template<typename TGenericObject>
@@ -15,7 +16,7 @@ void printResults(TGenericObject expected, TGenericObject actual,
 
 // Tester function, run main() and see your results!
 int main() {
-    // Uncomment and run your own tests once you've passed
+    // Comment this line and run your own tests once you've passed
     initIntListTester();
 }
 
@@ -139,6 +140,41 @@ void removeTests(int testNum[]) {
     description = "remove() Test: Removing list until list is empty";
     printResults(expected, actual, description, ++testNum[0]);
     
+}
+
+// Runs tests for IntList.removeAt()
+void removeAtTests(int testNum[]) {
+    IntList list;
+    list.add(10);
+    list.add(20);
+    list.add(30);
+    list.add(40);
+    list.add(50);
+
+    list.removeAt(2);
+
+    std::string expected = "[10, 20, 40, 50]";
+    std::string actual = list.toString();
+    std::string description = "removeAt() Test: Removing from middle of list (30)";
+    printResults(expected, actual, description, ++testNum[0]);
+
+    // --------------
+
+    list.removeAt(0);
+
+    expected = "[20, 40, 50]";
+    actual = list.toString();
+    description = "removeAt() Test: Removing from beginning of list (10)";
+    printResults(expected, actual, description, ++testNum[0]);
+
+    // --------------
+
+    list.removeAt(2);
+
+    expected = "[20, 40]";
+    actual = list.toString();
+    description = "removeAt() Test: Removing from end of list (50)";
+    printResults(expected, actual, description, ++testNum[0]);
 }
 
 // Prints test results
